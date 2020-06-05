@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Timing functions in javascript</title>
+    <script type="text/javascript">
+    /* Timing Functions:
+    1. setTimeout() execute statements/functions after a particular interval.
+    2. clearTimeout() expects one argument which is unique ID set when we actually set setTimeout.
+    3. setInterval() execute statements repeatedly after an interval.
+    4. clearInterval() clears a timer set with setInterval()
+
+    --> Above 4 methods comes from window object. Window object represents the entire window inside which
+        HTML or any other document is loaded. So, window object is one step above document object. Window object
+        is rarely used if compare to the document object.
+    */
+
+    var ID=0;
+    var seconds=0;
+    function printMsg() {
+        // document.getElementById("str").innerHTML="You've crossed 5 seconds limit.";
+        document.getElementById("str").innerHTML=seconds + " seconds";
+        seconds++;
+    }
+    function start() {
+      //  ID = window.setTimeout(printMsg,5000); //Here we're just refering the function and telling setTimeout to call it after 5000 milliseconds. 
+        ID = window.setInterval(printMsg,1000);
+    }
+    function stop() {
+      //  window.clearTimeout(ID);
+        window.clearInterval(ID);
+    }
+    </script>
+</head>
+<body>
+    <button onclick="start()">Start</button>
+    <h3 id="str">Timing function</h3>
+    <button onclick="stop()">Stop</button>
+</body>
+</html>

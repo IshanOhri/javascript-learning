@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Regular Expressions(Email validation) in javascript</title>
+    <script type="text/javascript">
+        /* 
+        \d - match any digit(equal to (0-9))
+        \w - match any word character (a-z, A-Z, 0-9 & _)
+        \s - match whitespace character (eg - spaces and tabs)
+        \t - match a tab only
+        ^ - start of string
+        & - end of string
+        */
+        function validateEmail() {
+            var email = document.getElementById("email").value;
+            var regx = /^([a-z0-9\.-]+)\@([a-z0-9-]+).([a-z]{2-10})(.[a-z]{2-5})?$/; 
+            //
+            // \. Represent just . & + represent dynamic range.
+            // ? means last group is optional. That is (.[a-z]{2-5}). We've kept . inside () because we want it to be optional.
+            // [a.b] - here . means it could be any character. That's why we used \. to just display . character.
+            
+            if(regx.test(email)) {
+                document.getElementById("label").innerHTML="Valid Email";
+                document.getElementById("label").style.color = "green"
+                document.getElementById("label").style.visibility ="visible"
+            }
+            else {
+                // document.getElementById("label").innerHTML="InValid Email";
+                // document.getElementById("label").style.color = "red"
+                document.getElementById("label").style.visibility ="visible"
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="email" placeholder="Email Id">
+        <label id="label" style="color: red; visibility: hidden;">Invalid Email!</label><br>
+        <button type="button" onclick="validateEmail()">submit</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="../img/email-validation.PNG" width="300"/>
+    </form>
+    
+</body>
+</html>

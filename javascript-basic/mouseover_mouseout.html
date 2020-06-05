@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mouseover/Mouseout functionality</title>
+    <script type="text/javascript">
+        function setNewImage() {
+            document.getElementById("img1").src = "img/5P6R12c.png"
+        }
+        function setOldImage() {
+            document.getElementById("img1").src = "img/3xfVTDY.jpg"
+        }
+    </script>
+</head>
+<body>
+    <img id="img1" onmouseover="setNewImage()" onmouseout="setOldImage()" src="img/3xfVTDY.jpg" width="500"/>
+</body>
+</html>

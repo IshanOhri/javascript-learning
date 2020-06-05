@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Get element by class name</title>
+    <script type="text/javascript">
+        function fn1() {
+            var para = document.getElementsByTagName("p") // fetch all paragraph tag
+            var element = document.getElementsByClassName("same"); // fetch only those tag with class name "same".
+            
+            for(var x=0; x<para.length; x++) {
+                para[x].style.fontStyle = "italic";
+            }
+            for(var i=0; i<element.length; i++) {
+                element[i].style.color = "green";
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <p class="same">This is paragraph 1</p>
+    <p>This is paragraph 2</p>
+    <p class="same">This is paragraph 3</p>
+    <p>This is paragraph 4</p>
+    <p class="same">This is paragraph 5</p>
+    <button onclick="fn1()">submit</button>
+</body>
+</html>

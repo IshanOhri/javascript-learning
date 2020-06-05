@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>
+            DOM Manipulation
+        </title>
+        <script type="text/javascript">
+            function fn1() {
+                var str = document.getElementById("text1").value;
+                alert(str);
+            }
+
+            function fn2() {
+                var username = document.getElementById("text2").value;
+                var password = document.getElementById("password").value;
+                if(username==password)
+                    alert("Username and password should not be same!");
+                else
+                    alert("Username and Password submitted");
+            }
+
+            function fn3() {
+                var rd1 = document.getElementById("rd1");
+                var rd2 = document.getElementById("rd2");
+                if(rd1.checked==true)
+                    alert("You've selected Male.")
+                else if(rd2.checked==true)
+                    alert("You've selected Female.")
+                else
+                    alert("You selected nothing!")
+            }
+
+            function fn4() {
+                var select = document.getElementById("sb1");
+                alert(select.options[select.selectedIndex].value);
+            }
+        </script>
+    </head>
+    <body>
+        <input id="text1" placeholder="Enter your full name!">
+        <button onclick="fn1()">submit</button>
+        <br>
+        <br>
+        <br>
+        <input type="text" id="text2" placeholder="username">
+        <input type="password" id="password" placeholder="password">
+        <button onclick="fn2()">submit</button>
+        <br>
+        <br>
+        <br>
+        <input type="radio" id="rd1" name="grp1" value="Male"> Male </input>
+        <input type="radio" id="rd2" name="grp1" value="Female"> Female </input>
+        <button onclick="fn3()">Submit</button>
+        <br>
+        <br>
+        <br>
+        <select name="selectBox" id="sb1">
+            <option value="Javascript">Javascript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+        </select>
+        <button onclick="fn4()">Submit</button>
+    </body>
+</html>

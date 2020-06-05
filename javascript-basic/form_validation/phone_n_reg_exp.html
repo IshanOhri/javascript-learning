@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Regular Expressions(Phone Number) in javascript</title>
+    <script type="text/javascript">
+        /* 
+        \d - match any digit(equal to (0-9))
+        \w - match any word character (a-z, A-Z, 0-9 & _)
+        \s - match whitespace character (eg - spaces and tabs)
+        \t - match a tab only
+        */
+        function validatePhoneNumber() {
+            var phone = document.getElementById("phone").value;
+            var regx = /^[2-6]\d{9}$/; // \d mean 0-9 and {9} means 9 times. ^ carrot sign means start of string and $ is end of string.
+            
+            if(regx.test(phone)) {
+                document.getElementById("label").innerHTML="Valid Number";
+                document.getElementById("label").style.color = "green"
+                document.getElementById("label").style.visibility ="visible"
+            }
+            else {
+                // document.getElementById("label").innerHTML="InValid Number";
+                // document.getElementById("label").style.color = "red"
+                document.getElementById("label").style.visibility ="visible"
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="phone" placeholder="Phone Number">
+        <label id="label" style="color: red; visibility: hidden;">Invalid Phone Number!</label><br>
+        <button type="button" onclick="validatePhoneNumber()">submit</button>
+    </form>
+    
+</body>
+</html>

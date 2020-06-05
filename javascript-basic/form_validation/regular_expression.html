@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Regular Expressions in javascript</title>
+
+    <!-- 1. Regular Expressions are used to perform powerul pattern matching and search/replace functions on text.
+    2. Regular Expression are treated as objects in js which means they have pre-defined properties and methods. -->
+
+    <script type="text/javascript">
+        function regularExpression() {
+            var userName = document.getElementById("uname").value;
+            
+            // Two ways of creating regular expression.
+            //var regx = new RegExp("E00", "i"); // 1. Object oriented way.
+
+            var regx = /E00/; //  2. Literal way. regx is an object (recommended way) "/E00/i" is incasesensitive.   
+            // var regx = /[a-x]00/; //range could be from (a-x)00. example: a00, b00 and so on.
+            if(regx.test(userName)) // Test method will check if the E00 pattern is there in username.
+            {
+                alert("Valid Username.");
+            }
+            else{
+               // alert("Invalid Username!");
+                document.getElementById("ilabel").style.visibility="visible";
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form action="welcome_form.html">
+        <input id="uname" type="text" placeholder="Username">
+        <label id="ilabel" style="color: red; visibility: hidden;"> Invalid Username</label><br>
+        <button onclick="regularExpression()" type="button">submit</button>
+    </form>
+    
+</body>
+</html>
